@@ -3,10 +3,10 @@ name: Build and Push Docker Images
 on:
   push:
     branches:
-      - main
-#    paths:
-#      - 'backend/**'
-#      - 'frontend/**'
+      - master
+    paths:
+      - 'backend/**'
+      - 'frontend/**'
 
 jobs:
   build-and-push:
