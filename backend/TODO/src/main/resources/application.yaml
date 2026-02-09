@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: todo
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/tododatabase}
+    username: ${SPRING_DATASOURCE_USERNAME:marto}
+    password: ${SPRING_DATASOURCE_PASSWORD:marto123}
+    driver-class-name: org.postgresql.Driver
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:schema.sql
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      probes:
+        enabled: true
