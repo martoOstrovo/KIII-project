@@ -16,14 +16,14 @@ services:
   backend:
     image: martogr/todo-backend:latest
     build:
-      context: .
+      context: ./backend/TODO
     healthcheck:
       test: [ "CMD-SHELL", "wget -qO- http://localhost:8080/actuator/health | grep UP" ]
       interval: 10s
       timeout: 3s
       retries: 10
     env_file:
-      - .env
+      - ./backend/TODO/.env
     ports:
       - "8080:8080"
     depends_on:
@@ -33,7 +33,7 @@ services:
   frontend:
     image: martogr/todo-frontend:latest
     build:
-      context: ../../frontend/todo-frontend
+      context: ./frontend/todo-frontend
     ports:
       - "3000:80"
     depends_on:
