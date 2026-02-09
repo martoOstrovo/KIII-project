@@ -14,7 +14,7 @@ services:
       retries: 20
 
   backend:
-    image: martogr/todo-backend:v1
+    image: martogr/todo-backend:latest
     build:
       context: .
     healthcheck:
@@ -31,7 +31,7 @@ services:
         condition: service_healthy
 
   frontend:
-    image: martogr/todo-frontend:v1
+    image: martogr/todo-frontend:latest
     build:
       context: ../../frontend/todo-frontend
     ports:
