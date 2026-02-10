@@ -10,7 +10,7 @@ spec:
       app: frontend
   strategy:
     rollingUpdate:
-      maxUnavailable: 1
+      maxUnavailable: 0
       maxSurge: 1
   template:
     metadata:
@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: martogr/todo-frontend:d7e162af04e4d5a6cebd47bf4336cc7bc4fb4c97
+          image: martogr/todo-frontend:07fa9399bd52ad601993c2af8246083c8930f497
           imagePullPolicy: Always
           ports:
             - containerPort: 80
